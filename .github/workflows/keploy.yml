@@ -27,7 +27,7 @@ jobs:
         run: |
           ~/.keploy/keploy record -c "npm start" --delay 5 &
           sleep 10
-          curl http://localhost:3000/api/your-endpoint
+          curl http://localhost:9090/api/posts
           sleep 5
 
       - name: Run Keploy Tests
