@@ -1,4 +1,4 @@
-name: Keploy CI
+name: Keploy CIs
 
 on: [push, pull_request]
 
