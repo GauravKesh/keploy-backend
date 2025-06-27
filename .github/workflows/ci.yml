@@ -27,6 +27,6 @@ jobs:
           KEPLOY_API_KEY: ${{ secrets.KEPLOY_API_KEY }}
         run: |
           keploy test-suite \
-            --app=bce9d1b8-cb02-4bec-96b1-19191ad343c8 \
+            --app=f8c25530-e030-4b58-9577-e3a1f692d152 \
             --base-path=https://keploy-backend.onrender.com/api/posts \
             --cloud
