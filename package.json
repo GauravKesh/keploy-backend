@@ -1,0 +1,16 @@
+{
+  "name": "keploy-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "backend": "node ./server.js",
+    "backend:dev": "nodemon ./server.js",
+    "backend:test": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
