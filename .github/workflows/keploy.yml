@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   keploy-test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -17,12 +18,17 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Start Keploy Record
+      - name: Install Keploy
         run: |
-          curl -s https://raw.githubusercontent.com/keploy/keploy/main/install.sh | bash
-          ./keploy record -c "npm start" --delay 5 &
+          curl -sSfL https://keploy.io/install.sh | bash
+          echo "$HOME/.keploy" >> $GITHUB_PATH
+
+      - name: Record with Keploy
+        run: |
+          ~/.keploy/keploy record -c "npm start" --delay 5 &
           sleep 10
           curl http://localhost:3000/api/your-endpoint
+          sleep 5
 
       - name: Run Keploy Tests
-        run: ./keploy test -c "npm start"
+        run: ~/.keploy/keploy test -c "npm start"
