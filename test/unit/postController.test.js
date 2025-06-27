@@ -1,5 +1,5 @@
 const mockingoose = require('mockingoose');
-const Poswt = require('../../models/Post');
+const Post = require('../../models/Post');
 const { getAllPosts } = require('../../api/controllers/postControllers');
 
 describe('Post Controller - getAllPosts (Unit)', () => {

@@ -6,11 +6,29 @@
     "test": "test"
   },
   "scripts": {
-    "backend": "node ./server.js",
-    "backend:dev": "nodemon ./server.js",
-    "backend:test": "jest --coverage"
+    "start": "node ./server.js",
+    "dev": "nodemon ./server.js",
+    "swagger": "node -e \"console.log(require('swagger-jsdoc')(require('./swagger.config')))\"",
+    "test": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "dotenv-flow": "^4.1.0",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mockingoose": "^2.16.2",
+    "mongodb-memory-server": "^10.1.4",
+    "nodemon": "^3.0.2",
+    "supertest": "^7.1.1"
+  }
 }

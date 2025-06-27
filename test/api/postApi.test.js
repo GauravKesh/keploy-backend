@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const request = require('supertest');
-const app = require('../../app') // from app.js
+const app = require('../../app')
 const Post = require('../../models/Post');
 
 let mongoServer;
@@ -33,5 +33,5 @@ describe('GET /api/posts', () => {
         const res = await request(app).get('/api/posts');
         expect(res.statusCode).toBe(200);
         expect(res.body.posts.length).toBeGreaterThan(0);
-    }, 10000); // ⏱️ extend timeout
+    }, 10000);
 });
